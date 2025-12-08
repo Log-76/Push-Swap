@@ -36,3 +36,5 @@ rrb (rotation inverse de b) : déplace tous les éléments de la pile b vers le 
 Le dernier élément devient le premier.
 
 rrr : rra et rrb en même temps.
+
+pour les rrr au sa il suffit de les afficher quand on les utilise

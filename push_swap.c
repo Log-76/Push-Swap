@@ -6,7 +6,12 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/08 15:05:59 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:50:25 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void push_swap(char *a)
+{
+	char *b;
+	
+}
