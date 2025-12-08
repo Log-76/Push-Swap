@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/08 15:11:09 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:42:48 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int ft_istrier(char *s)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] > s[i + 1])
+		if (s[i] > s[i+1] && s[i+1]!='\0')
 			return (0);
 		i++;
 	}
@@ -36,9 +36,6 @@ int ft_istrier(char *s)
 
 int main()
 {
-	char c = 'a';
-	char b = 'b';
-	printf("%c %c\n",c ,b);
-	ft_swap(&c,&b);
-	printf("%c %c\n",c ,b);
+	char c[] = "bac";
+	printf("%d\n",ft_istrier(c));
 }
