@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/09 14:13:08 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:36:19 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,18 @@ void ft_type(char **s, char **s2)
 	}
 	else if (s2[i])
 	{
-		s[ft_strlen(s)] = s2[0];
 		write(1,"pa\n",3);
+		s[ft_strlen(s)] = s2[0];
 	}
-	else if (s2[i])
+	else if (s[i])
 	{
-		s2[ft_strlen(s)] = s[0];
 		write(1,"pb\n",3);
+		s2[ft_strlen(s)] = s[0];
+	}
+	else if (s[i] && s2[i])
+	{
+		write(1,"rr\n",3);
+		s[ft_strlen(s)] = s2[0];
+		s2[ft_strlen(s)] = s[0];
 	}
 }

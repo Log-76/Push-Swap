@@ -2,7 +2,8 @@
 CC = cc  
 CFLAGS = -Wall -Wextra -Werror
 NAME = pushSwap.a
-C_libf = 
+C_libf = push_swap_utils.c\
+		 push_swap.c
 
 LIB_OBJS =  $(C_libf:.c=.o)
 all: $(NAME)
