@@ -6,18 +6,18 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/09 12:52:05 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:04:40 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //sa
-void ft_swap(char *c, char *d)
+void ft_swap(char **c, char **d)
 {
 	char n;
-	n = *c;
-	*c = *d;
-	*d = n;
+	n = **c;
+	**c = **d;
+	**d = n;
 }
 // trier ?
 int ft_istrier(char *s)
@@ -33,7 +33,7 @@ int ft_istrier(char *s)
 	}
 	return (1);
 }
-int ft_strlen(char *a)
+int ft_strlen(char **a)
 {
 	int i;
 
