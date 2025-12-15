@@ -6,41 +6,22 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/15 17:31:14 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:24:30 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(char *a)
+void push_swap(char **argv,int argc)
 {
-	char *b = "";
+	int *b;
 	int i;
 	int n;
 
 	i = 0;
-	n = 0;
-	while (a[i])
-	{
-		if ((a[i]<= '0' && a[i] >= '9'))
-		{
-			write(1,"error\n",5);
-			return ;
-		}
-		i++;
-	}
-	i = 0;
-	while(a[i])
-	{
-		if(a[i] == a[i+1])
-		{
-			write(1,"error\n",5);
-			return ;
-		}
-		i++;		
-	}
-	// printf("%s\n",a);
-	while ((ft_istrier(a) == 0 || ft_istrier(b) == 0) && n == 0)
+
+	printf("%s\n",argv[1]);
+	while (ft_istrier(a) == 0 && n == 0 )
 	{
 		n = ft_type(&a,&b);
 		if (n == 0)
@@ -48,7 +29,7 @@ void push_swap(char *a)
 		else if (n == 0)
 			ft_type3(&a,&b);
 	}
-	printf("%s\n",a);
+	// printf("%s\n",a);
 	write(1,"ok\n",3);
 }
 
@@ -142,7 +123,30 @@ void ft_type3(char **s, char **s2)
 		}
 	}
 }
-int main()
+int main(int argc, char **argv)
 {
-	push_swap("213");
+	int i = 0;
+	int n = 0;
+	if (argc == 1)
+		return 0;
+	while (argv[i])
+	{
+		n = 0;
+		while (argv[i][n])
+		{
+			if (argv[i][n] !='-' && argv[i][n+1] != '\0' && n == 0)
+				i++;
+			if ((argv[i][n]<= '0' && argv[i][n] >= '9'))
+			{
+				write(1,"error\n",5);
+				return 0;
+			}
+			n++;
+		}
+		i++;
+	}
+	printf("%s\n",argv[1]);
+	push_swap(argv);
 }
+// faire les verif dans le main envoyer dans push swap une chaine de caractere valide
+// passer les valeur en int 
