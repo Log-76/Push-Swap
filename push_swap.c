@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/11 17:03:47 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:31:14 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void push_swap(char *a)
 {
-	char *b = NULL;
+	char *b = "";
 	int i;
+	int n;
 
 	i = 0;
-	
+	n = 0;
 	while (a[i])
 	{
-		if ((a[i]>= 48 && a[i] <= 57))
+		if ((a[i]<= '0' && a[i] >= '9'))
 		{
 			write(1,"error\n",5);
 			return ;
@@ -38,36 +39,40 @@ void push_swap(char *a)
 		}
 		i++;		
 	}
-	while (ft_istrier(a) == 0 && ft_istrier(b) == 0)
+	// printf("%s\n",a);
+	while ((ft_istrier(a) == 0 || ft_istrier(b) == 0) && n == 0)
 	{
-		ft_type(&a,&b);
-		if (ft_type(&a,&b) == 0)
-			ft_type2(&a,&b);
-		else if (ft_type2(&a,&b) == 0)
+		n = ft_type(&a,&b);
+		if (n == 0)
+			n = ft_type2(&a,&b);
+		else if (n == 0)
 			ft_type3(&a,&b);
-	}	
+	}
+	printf("%s\n",a);
+	write(1,"ok\n",3);
 }
 
 int ft_type(char **s, char **s2)
 {
 	int i;
+	char *c;
 
 	i = 0;
-	if (s[i] > s[i+1] && s[i+1] != 0)
+	if (*s[0] > *s[1])
 	{
 		write(1,"sa\n",3);
-		ft_swap(&s[i],&s[i+1]);
+		ft_swap(&s[0],&s[2]);
 	}
 	else if (s2[i] > s2[i+1] && s2[i] && s2[i+1]!= 0 )
 	{
 		write(1,"sb\n",3);
-		ft_swap(&s2[i],&s2[i+1]);
+		ft_swap(*s2[i],*s2[i+1]);
 	}
 	else if (s2[i] > s2[i+1] && s[i] > s[i+1] && s2[i] && s2[i+1] != 0)
 	{
 		write(1,"ss\n",3);
-		ft_swap(&s[i],&s[i+1]);
-		ft_swap(&s2[i],&s2[i+1]);
+		ft_swap(*s[i],*s[i+1]);
+		ft_swap(*s2[i],*s2[i+1]);
 	}
 	else
 		return(0);
@@ -136,4 +141,8 @@ void ft_type3(char **s, char **s2)
 			n++;
 		}
 	}
+}
+int main()
+{
+	push_swap("213");
 }

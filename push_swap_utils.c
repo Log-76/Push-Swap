@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/11 16:04:40 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:29:42 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 //sa
 void ft_swap(char **c, char **d)
 {
-	char n;
-	n = **c;
-	**c = **d;
-	**d = n;
+	char **n;
+	*n = *c;
+	*c = *d;
+	*d = *n;
 }
 // trier ?
 int ft_istrier(char *s)
@@ -41,9 +41,4 @@ int ft_strlen(char **a)
 	while (a[i])
 		i++;
 	return (i);
-}
-int main()
-{
-	char c[] = "bac";
-	printf("%d\n",ft_istrier(c));
 }
