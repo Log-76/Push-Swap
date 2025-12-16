@@ -6,28 +6,29 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 09:54:51 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:48:33 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //sa
-void ft_swap(char **c, char **d)
+void	ft_swap(int *a, int *b)
 {
-	char **n;
-	*n = *c;
-	*c = *d;
-	*d = *n;
+	int		c;
+	// printf("%d",*a);
+	c = *a;
+	*a = *b;
+	*b = c;
 }
 // trier ?
-int ft_istrier(char *s)
+int ft_istrier(int *s, int argc)
 {
 	int i;
 
 	i = 0;
-	while (s[i])
+	while (i < argc)
 	{
-		if (s[i] > s[i+1] && s[i+1]!='\0')
+		if (s[i] > s[i+1])
 			return (0);
 		i++;
 	}

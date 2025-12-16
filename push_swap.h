@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 09:46:59 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:43:33 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void ft_swap(char **c, char **d);
-int ft_istrier(char *s);
+void	ft_swap(int *a, int *b);
+int ft_istrier(int *s, int argc);
 int ft_strlen(char **a);
-int ft_type(char **s, char **s2);
+int ft_type(int *s, int *s2);
 int ft_type2(char **s, char **s2);
 void ft_type3(char **s, char **s2);
 int	ft_atoi(const char *nptr);
