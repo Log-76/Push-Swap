@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 15:11:13 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:46:14 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void push_swap(char **argv,int argc)
 	n = 0;
 	while (i < argc)
 		a[n++] = ft_atoi(argv[i++]);
-	n = ft_istrier(a,argc);
+	n = 0;
 	// printf("%d\n",n);
 	while (ft_istrier(a,argc) == 0 && n ==0)
 	{
@@ -35,6 +35,7 @@ void push_swap(char **argv,int argc)
 		// else if (n == 0)
 		// 	ft_type3(&argv,&b);
 	}
+	// printf("%d\n",n);
 	// printf("%s\n",a);
 	write(1,"ok\n",3); 
 }
@@ -45,13 +46,10 @@ int ft_type(int *s, int *s2)
 	char *c;
 
 	i = 0;
-	(void)s2;
-	printf("%d\n", s[0]);
 	if (s[0] > s[1])
 	{
 		write(1,"sa\n",3);
 		ft_swap(&s[0],&s[1]);
-		printf("%d",s[1]);
 	}
 	else if (s2[i] > s2[i+1] && s2[i] && s2[i+1]!= 0 )
 	{
@@ -68,7 +66,7 @@ int ft_type(int *s, int *s2)
 		return(0);
 	return (1);
 }
-// int ft_type2(char **s, char **s2)
+// int ft_type2(int *s, int *s2)
 // {
 // 	int n;
 // 	int i;

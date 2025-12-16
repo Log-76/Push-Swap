@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 14:48:33 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:05:20 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_swap(int *a, int *b)
 {
 	int		c;
-	// printf("%d",*a);
 	c = *a;
 	*a = *b;
 	*b = c;
@@ -34,7 +33,7 @@ int ft_istrier(int *s, int argc)
 	}
 	return (1);
 }
-int ft_strlen(char **a)
+int ft_strlen(int *a)
 {
 	int i;
 
