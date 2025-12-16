@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 16:46:14 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:25:34 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void push_swap(char **argv,int argc)
 		a[n++] = ft_atoi(argv[i++]);
 	n = 0;
 	// printf("%d\n",n);
-	while (ft_istrier(a,argc) == 0 && n ==0)
+	while (ft_istrier(a,argc) == 0 && n == 0)
 	{
 		n = ft_type(a,b);
+		// printf("%d",ft_istrier(a,argc));
 		// if (n == 0)
 		// 	n = ft_type2(&argv,&b);
 		// else if (n == 0)
