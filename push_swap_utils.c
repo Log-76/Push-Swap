@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/15 18:26:15 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:54:51 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,32 @@ int ft_strlen(char **a)
 	while (a[i])
 		i++;
 	return (i);
+}
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	numb;
+	int	signe;
+
+	i = 0;
+	signe = 0;
+	numb = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+		{
+			signe = -1;
+		}
+		i++;
+	}
+	while (nptr[i]>= '0' && nptr[i] <= '9' && nptr[i] != '\0')
+	{
+		numb = numb * 10 + (nptr[i] - '0');
+		i++;
+	}
+	if (signe == -1)
+		numb *= -1;
+	return (numb);
 }

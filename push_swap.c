@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/15 19:24:30 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:53:20 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 void push_swap(char **argv,int argc)
 {
+	int *a;
 	int *b;
 	int i;
 	int n;
-
+	
+	a = malloc(argc * sizeof(int));
+	b = malloc(argc * sizeof(int));
 	i = 0;
-
-	printf("%s\n",argv[1]);
-	while (ft_istrier(a) == 0 && n == 0 )
+	a[i] = ft_atoi(argv[i]);
+	printf("%s\n",a[0]);
+	while (ft_istrier(argv) == 0 && n == 0 )
 	{
-		n = ft_type(&a,&b);
+		n = ft_type(&argv,&b);
 		if (n == 0)
-			n = ft_type2(&a,&b);
+			n = ft_type2(&argv,&b);
 		else if (n == 0)
-			ft_type3(&a,&b);
+			ft_type3(&argv,&b);
 	}
 	// printf("%s\n",a);
 	write(1,"ok\n",3);
@@ -146,7 +149,7 @@ int main(int argc, char **argv)
 		i++;
 	}
 	printf("%s\n",argv[1]);
-	push_swap(argv);
+	push_swap(argv,argc);
 }
 // faire les verif dans le main envoyer dans push swap une chaine de caractere valide
 // passer les valeur en int 

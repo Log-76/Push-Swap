@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/15 17:29:47 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/16 09:46:59 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,4 @@ int ft_strlen(char **a);
 int ft_type(char **s, char **s2);
 int ft_type2(char **s, char **s2);
 void ft_type3(char **s, char **s2);
+int	ft_atoi(const char *nptr);
