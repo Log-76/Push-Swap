@@ -6,42 +6,45 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/16 17:25:20 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:09:04 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//sa
+
 void	ft_swap(int *a, int *b)
 {
-	int		c;
+	int	c;
+
 	c = *a;
 	*a = *b;
 	*b = c;
 }
-// trier ?
-int ft_istrier(int *s, int argc)
+
+int	ft_istrier(int *s, int argc)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < argc)
 	{
-		if (s[i] > s[i+1] && s[i+1])
+		if (s[i] > s[i + 1] && s[i + 1])
 			return (0);
 		i++;
 	}
 	return (1);
 }
-int ft_strlen(int *a)
+
+int	ft_strlen(int *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (a[i])
 		i++;
 	return (i);
 }
+
 int	ft_atoi(const char *nptr)
 {
 	int	i;
@@ -61,7 +64,7 @@ int	ft_atoi(const char *nptr)
 		}
 		i++;
 	}
-	while (nptr[i]>= '0' && nptr[i] <= '9' && nptr[i] != '\0')
+	while (nptr[i] >= '0' && nptr[i] <= '9' && nptr[i] != '\0')
 	{
 		numb = numb * 10 + (nptr[i] - '0');
 		i++;
