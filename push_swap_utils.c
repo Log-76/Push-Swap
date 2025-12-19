@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/18 16:09:04 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:55:22 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,39 @@ int	ft_atoi(const char *nptr)
 	if (signe == -1)
 		numb *= -1;
 	return (numb);
+}
+
+void ft_type5(int *s, int *s2)
+{
+	int i;
+	int n;
+	int m;
+
+	i = 0;
+	n = 0;
+	m = 0;
+	if (s[i])
+	{
+		write(1,"ra\n",3);
+		while (s[i])
+		{
+			s2[i] = s[i];
+			
+			i++;
+		}
+		s[n] = s2[i-1];
+		n++;
+		while (n < i)
+			s[n++] = s2[m++];
+		printf("%d%d%d",s[0],s[1],s[2]);
+	}
+	else if (s2[i])
+	{
+		write(1,"rb\n",3);
+		while (s[i])
+			s[i] = s2[i];
+		s2[n++] = s[i];
+		while (n < i)
+			s2[n++] = s[m++];
+	}
 }

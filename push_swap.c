@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/18 18:24:02 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/19 17:50:12 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,20 @@ void	push_swap(char **argv, int argc)
 		n = ft_type(a, b);
 		if (n == 0)
 			n = ft_type2(a, b);
-		else if (n == 0)
-			ft_type3(a, b);
-		else if (n == 0)
-			ft_type3(a, b);
+		if (n == 0)
+		{
+			printf("%d\n",n);
+			ft_type5(a, b);
+			return ;
+		}
+		// if (n == 0)
+		// 	ft_type4(a, b);
+		// if (n == 0)
+		// 	ft_type3(a, b);
+			
 	}
 	write(1, "ok\n", 3);
+	printf("%d%d%d",a[0],a[1],a[2]);
 }
 
 int	ft_type(int *s, int *s2)
@@ -100,12 +108,12 @@ int	ft_type3(int *s, int *s2)
 	int c[ft_strlen(s)+1];
 
 	n = 0;
-	i = ft_strlen(s);
+	i = 0;
 	if (s[n])
 	{
 		write(1,"rra\n",4);
 		while (s[i])
-			c[i] = s[i++];
+			c[i] = s[i];
 		s[n] = c[i];
 		while (n < 0)
 			s[--i] = c[++n];
@@ -121,7 +129,7 @@ int	ft_type3(int *s, int *s2)
 	return (1);
 }
 
-int	ft_type(int *s, int *s2)
+int	ft_type4(int *s, int *s2)
 {
 	int	i;
 	int n;
@@ -145,7 +153,9 @@ int	ft_type(int *s, int *s2)
 			n++;
 		}
 	}
+	return (1);
 }
+
 int	main(int argc, char **argv)
 {
 	int	i;
