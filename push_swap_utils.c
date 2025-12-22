@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/19 17:55:22 by lleriche         ###   ########.fr       */
+/*   Updated: 2025/12/22 14:05:54 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,20 +89,20 @@ void ft_type5(int *s, int *s2)
 		while (s[i])
 		{
 			s2[i] = s[i];
-			
 			i++;
 		}
-		s[n] = s2[i-1];
-		n++;
+		s[n++] = s2[i-1];
 		while (n < i)
 			s[n++] = s2[m++];
-		printf("%d%d%d",s[0],s[1],s[2]);
 	}
 	else if (s2[i])
 	{
 		write(1,"rb\n",3);
 		while (s[i])
+		{
 			s[i] = s2[i];
+			i++;
+		}
 		s2[n++] = s[i];
 		while (n < i)
 			s2[n++] = s[m++];
