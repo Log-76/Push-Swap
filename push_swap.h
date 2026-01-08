@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/19 13:52:30 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:22:23 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int		ft_type(int *s, int *s2);
 int		ft_type2(int *s, int *s2);
 int		ft_type3(int *s, int *s2);
 int		ft_atoi(const char *nptr);
-void	ft_type5(int *s, int *s2);
+void	ft_type5(int *s, int *s2, int argc);
 int		ft_type4(int *s, int *s2);

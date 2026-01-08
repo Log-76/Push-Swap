@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2025/12/22 13:58:56 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:17:44 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	push_swap(char **argv, int argc)
 		if (n == 0)
 			n = ft_type2(a, b);
 		if (n == 0)
-			ft_type5(a, b);
+			ft_type5(a, b, argc);
 		// if (n == 0)
 		// 	n = ft_type4(a, b);
 		// if (n == 0)
 		// 	n = ft_type3(a, b);	
 	}
 	write(1, "ok\n", 3);
-	printf("%d%d%d%d\n",a[0],a[1],a[2],a[3]);
+	printf("%d%d%d%d\n",a[0],a[1],a[2]);
 }
 
 int	ft_type(int *s, int *s2)
@@ -113,7 +113,7 @@ int	ft_type3(int *s, int *s2)
 		while (n < 0)
 			s[--i] = c[++n];
 	}
-	else if (s[n])
+	else if (s2[n])
 	{
 		write(1,"rrb\n",4);
 		while (n < 0)
@@ -178,7 +178,4 @@ int	main(int argc, char **argv)
 	}
 	push_swap(argv, argc);
 }
-// faire les verif dans le main envoyer 
-// dans push swap une chaine de caractere valide
-// passer les valeur en int
-// penser a faire ra et rb  
+//separer tout les ft_type en fonction individuel
