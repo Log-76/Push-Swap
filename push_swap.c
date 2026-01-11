@@ -68,88 +68,86 @@ int	ft_type(int *s, int *s2)
 	return (1);
 }
 
-int	ft_type2(int *s, int *s2)
+int	ft_type2(int *s, int *s2 , int argc)
 {
 	int	n;
-	int	i;
 
 	n = 0;
-	i = ft_strlen(s);
-	if (s2[i])
+	if (s2[argc])
 	{
 		write(1, "pa\n", 3);
-		s[i] = s2[0];
+		s[argc] = s2[0];
 	}
-	else if (s[i])
+	else if (s[argc])
 	{
 		write(1, "pb\n", 3);
-		s2[i] = s[0];
+		s2[argc] = s[0];
 	}
-	else if (s[i] && s2[i])
+	else if (s[argc] && s2[argc])
 	{
 		write(1, "rr\n", 3);
-		s[i] = s2[0];
-		s2[i] = s[0];
+		s[argc] = s2[0];
+		s2[argc] = s[0];
 	}
 	else
 		return (0);
 	return (1);
 }
 
-int	ft_type3(int *s, int *s2)
-{
-	int n;
-	int i;
-	int c[ft_strlen(s)+1];
+// int	ft_type3(int *s, int *s2)
+// {
+// 	int n;
+// 	int i;
+// 	int c[ft_strlen(s)+1];
 
-	n = 0;
-	i = 0;
-	if (s[n])
-	{
-		write(1,"rra\n",4);
-		while (s[i])
-			c[i] = s[i];
-		s[n] = c[i];
-		while (n < 0)
-			s[--i] = c[++n];
-	}
-	else if (s2[n])
-	{
-		write(1,"rrb\n",4);
-		while (n < 0)
-			s[i--] = s2[n++];
-	}
-	else
-		return (0);
-	return (1);
-}
+// 	n = 0;
+// 	i = 0;
+// 	if (s[n])
+// 	{
+// 		write(1,"rra\n",4);
+// 		while (s[i])
+// 			c[i] = s[i];
+// 		s[n] = c[i];
+// 		while (n < 0)
+// 			s[--i] = c[++n];
+// 	}
+// 	else if (s2[n])
+// 	{
+// 		write(1,"rrb\n",4);
+// 		while (n < 0)
+// 			s[i--] = s2[n++];
+// 	}
+// 	else
+// 		return (0);
+// 	return (1);
+// }
 
-int	ft_type4(int *s, int *s2)
-{
-	int	i;
-	int n;
-	int c[ft_strlen(s)+1];
+// int	ft_type4(int *s, int *s2)
+// {
+// 	int	i;
+// 	int n;
+// 	int c[ft_strlen(s)+1];
 
-	i = 0;
-	n = 0;
-	if (s[i] && s2[i])
-	{
-		write(1,"rrr\n",4);
-		while (s[n])
-		{
-			c[n] = s[n];
-			n++;
-		}
-		n = 0;
-		while (n < ft_strlen(s))
-		{
-			s[i]  = s2[n];
-			s2[i--] = c[n];
-			n++;
-		}
-	}
-	return (1);
-}
+// 	i = 0;
+// 	n = 0;
+// 	if (s[i] && s2[i])
+// 	{
+// 		write(1,"rrr\n",4);
+// 		while (s[n])
+// 		{
+// 			c[n] = s[n];
+// 			n++;
+// 		}
+// 		n = 0;
+// 		while (n < ft_strlen(s))
+// 		{
+// 			s[i]  = s2[n];
+// 			s2[i--] = c[n];
+// 			n++;
+// 		}
+// 	}
+// 	return (1);
+// }
 
 int	main(int argc, char **argv)
 {

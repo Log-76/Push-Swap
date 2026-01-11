@@ -44,6 +44,7 @@ int	ft_strlen(int *a)
 		i++;
 	return (i);
 }
+// a virer car mauvais
 
 int	ft_atoi(const char *nptr)
 {
