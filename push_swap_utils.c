@@ -35,17 +35,6 @@ int	ft_istrier(int *s, int argc)
 	return (1);
 }
 
-int	ft_strlen(int *a)
-{
-	int	i;
-
-	i = 0;
-	while (a[i])
-		i++;
-	return (i);
-}
-// a virer car mauvais
-
 int	ft_atoi(const char *nptr)
 {
 	int	i;
@@ -75,38 +64,9 @@ int	ft_atoi(const char *nptr)
 	return (numb);
 }
 
-void ft_type5(int *s, int *s2, int argc)
+void	ft_ss(int *s, int *s2, int argc)
 {
-	int	i;
-	int	n;
-	int	m;
-
-	i = 0;
-	n = 0;
-	m = 0;
-	if (s[i])
-	{
-		write(1, "ra\n", 3);
-		while (i > argc)
-		{
-			s2[i] = s[i];
-			i++;
-		}
-		s[n++] = s2[i-1];
-		while (n < i)
-			s[n++] = s2[m++];
-		printf("%d%d%d%d\n",s[0],s[1],s[2],s[3]);
-	}
-	else if (s2[i])
-	{
-		write(1, "rb\n", 3);
-		while (s2[i])
-		{
-			s[i] = s2[i];
-			i++;
-		}
-		s2[n++] = s[i];
-		while (n < i)
-			s2[n++] = s[m++];
-	}
+	write(1, "ss\n", 3);
+	ft_swap(&s[0], &s[1]);
+	ft_swap(&s2[0], &s2[1]);
 }

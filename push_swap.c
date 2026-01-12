@@ -25,129 +25,23 @@ void	push_swap(char **argv, int argc)
 	n = 0;
 	while (i < argc)
 		a[n++] = ft_atoi(argv[i++]);
-	while (ft_istrier(a, argc) == 0)
-	{
-		n = 0;
-		n = ft_type(a, b);
-		if (n == 0)
-			n = ft_type2(a, b);
-		if (n == 0)
-			ft_type5(a, b, argc);
-		// if (n == 0)
-		// 	n = ft_type4(a, b);
-		// if (n == 0)
-		// 	n = ft_type3(a, b);	
-	}
+	simple_sort(a, b, argc);
 	write(1, "ok\n", 3);
 	printf("%d%d%d%d\n",a[0],a[1],a[2]);
 }
-
-int	ft_type(int *s, int *s2)
+void simple_sort(int *a, int *b, int size)
 {
-	int		i;
-
-	i = 0;
-	if (s[0] > s[1])
-	{
-		write(1, "sa\n", 3);
-		ft_swap(&s[0], &s[1]);
-	}
-	else if (s2[i] > s2[i + 1] && s2[i] && s2[i + 1] != 0)
-	{
-		write(1, "sb\n", 3);
-		ft_swap(&s2[i], &s2[i + 1]);
-	}
-	else if (s2[i] > s2[i + 1] && s[i] > s[i + 1] && s2[i] && s2[i + 1] != 0)
-	{
-		write(1, "ss\n", 3);
-		ft_swap(&s[i], &s[i + 1]);
-		ft_swap(&s2[i], &s2[i + 1]);
-	}
-	else
-		return (0);
-	return (1);
+    if (ft_istrier(a, size))
+        return;
+    if (size == 2)
+        sort_two(a);
+    else if (size == 3)
+        sort_three(a);
+    else if (size == 4)
+        sort_four(a, b, size);
+    else
+        sort_hundred(a, b, size);
 }
-
-int	ft_type2(int *s, int *s2 , int argc)
-{
-	int	n;
-
-	n = 0;
-	if (s2[argc])
-	{
-		write(1, "pa\n", 3);
-		s[argc] = s2[0];
-	}
-	else if (s[argc])
-	{
-		write(1, "pb\n", 3);
-		s2[argc] = s[0];
-	}
-	else if (s[argc] && s2[argc])
-	{
-		write(1, "rr\n", 3);
-		s[argc] = s2[0];
-		s2[argc] = s[0];
-	}
-	else
-		return (0);
-	return (1);
-}
-
-// int	ft_type3(int *s, int *s2)
-// {
-// 	int n;
-// 	int i;
-// 	int c[ft_strlen(s)+1];
-
-// 	n = 0;
-// 	i = 0;
-// 	if (s[n])
-// 	{
-// 		write(1,"rra\n",4);
-// 		while (s[i])
-// 			c[i] = s[i];
-// 		s[n] = c[i];
-// 		while (n < 0)
-// 			s[--i] = c[++n];
-// 	}
-// 	else if (s2[n])
-// 	{
-// 		write(1,"rrb\n",4);
-// 		while (n < 0)
-// 			s[i--] = s2[n++];
-// 	}
-// 	else
-// 		return (0);
-// 	return (1);
-// }
-
-// int	ft_type4(int *s, int *s2)
-// {
-// 	int	i;
-// 	int n;
-// 	int c[ft_strlen(s)+1];
-
-// 	i = 0;
-// 	n = 0;
-// 	if (s[i] && s2[i])
-// 	{
-// 		write(1,"rrr\n",4);
-// 		while (s[n])
-// 		{
-// 			c[n] = s[n];
-// 			n++;
-// 		}
-// 		n = 0;
-// 		while (n < ft_strlen(s))
-// 		{
-// 			s[i]  = s2[n];
-// 			s2[i--] = c[n];
-// 			n++;
-// 		}
-// 	}
-// 	return (1);
-// }
 
 int	main(int argc, char **argv)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_rra(int *s, int argc)
+void	ft_rra(int *s, int argc)
 {
 	int n;
 	int i;
@@ -26,7 +26,7 @@ void ft_rra(int *s, int argc)
 		s[n] = c[++n];
 }
 
-void ft_rrb(int *s2, int argc)
+void	ft_rrb(int *s2, int argc)
 {
 	int n;
 	int i;
@@ -42,29 +42,71 @@ void ft_rrb(int *s2, int argc)
 		s2[n] = c[++n];
 }
 
-int	ft_rrr(int *s, int *s2, int argc)
+void	ft_rrr(int *s, int *s2, int argc)
 {
 	int	i;
-	int n;
-	int c[argc+1];
+	int temp;
 
 	i = 0;
-	n = 0;
-	if (s[i] && s2[i])
+	write(1,"rrr\n",4);
+	temp = s[argc - 1];
+	i = argc - 1;
+	while (i > 0)
 	{
-		write(1,"rrr\n",4);
-		while (s[n])
-		{
-			c[n] = s[n];
-			n++;
-		}
-		n = 0;
-		while (n < argc)
-		{
-			s[i]  = s2[n];
-			s2[i--] = c[n];
-			n++;
-		}
+		s[i] = s[i - 1];
+		i--;
 	}
-	return (1);
+	s[0] = temp;
+	temp = s2[argc - 1];
+	i = argc - 1;
+	while (i > 0)
+	{
+		s2[i] = s2[i - 1];
+		i--;
+	}
+	s2[0] = temp;
+}
+
+void ft_pa(int *s, int *s2, int argc)
+{
+	int i;
+
+	i = argc - 1;
+	write(1, "pa\n", 3);
+	// systeme de decalage de 1 pour faire de la place au debut de la stack
+	while (i > 0)
+    {
+        s[i] = s[i - 1];
+        i--;
+    }
+	s[0] = s2[0];
+	i++;
+	// Décaler tous les éléments de a vers le haut
+	while (i < argc - 1)
+	{
+		s[i] = s[i + 1];
+        i++;
+	}
+}
+
+void ft_pb(int *s, int *s2, int argc)
+{
+	int i;
+
+	i = argc - 1;
+	write(1, "pb\n", 3);
+	// systeme de decalage de 1 pour faire de la place au debut de la stack
+	while (i > 0)
+    {
+        s2[i] = s2[i - 1];
+        i--;
+    }
+	s2[0] = s[0];
+	i++;
+	// Décaler tous les éléments de a vers le haut
+	while (i < argc - 1)
+	{
+		s2[i] = s2[i + 1];
+        i++;
+	}
 }
