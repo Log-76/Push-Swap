@@ -38,6 +38,7 @@ void	sort_three(int *a);
 void	sort_four(int *a, int *b, int total_size);
 void	push_small_to_b(int *a, int *b, int total_size, int seuil);
 void	copy_array(int *src, int *dst, int size);
+void	bubble_sort(int *arr, int size);
 int		find_median(int *stack, int size);
 void	push_if_small(int *a, int *b, int total_size, int threshold);
 void	push_rest_to_b(int *a, int *b, int total_size);
