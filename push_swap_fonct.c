@@ -6,40 +6,42 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:17:18 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/09 11:17:18 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:45:22 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	ft_rra(int *s, int argc)
 {
-	int n;
-	int i;
-	int c[argc + 1];
+	int	i;
+	int temp;
 
-	n = 0;
-	i = 0;
 	write(1,"rra\n",4);
-	while (i < argc)
-		c[i] = s[i++];
-	s[n] = c[i];
-	while (n < 0)
-		s[n] = c[++n];
+	temp = s[argc - 1];
+	i = argc - 1;
+	while (i > 0)
+	{
+		s[i] = s[i - 1];
+		i--;
+	}
+	s[0] = temp;	
 }
 
 void	ft_rrb(int *s2, int argc)
 {
-	int n;
-	int i;
-	int c[argc + 1];
+	int	i;
+	int temp;
 
-	n = 0;
-	i = 0;
 	write(1,"rrb\n",4);
-	while (i < argc)
-		c[i] = s2[i++];
-	s2[n] = c[i];
-	while (n < 0)
-		s2[n] = c[++n];
+	temp = s2[argc - 1];
+	i = argc - 1;
+	while (i > 0)
+	{
+		s2[i] = s2[i - 1];
+		i--;
+	}
+	s2[0] = temp;
 }
 
 void	ft_rrr(int *s, int *s2, int argc)
@@ -47,7 +49,6 @@ void	ft_rrr(int *s, int *s2, int argc)
 	int	i;
 	int temp;
 
-	i = 0;
 	write(1,"rrr\n",4);
 	temp = s[argc - 1];
 	i = argc - 1;
@@ -80,13 +81,14 @@ void ft_pa(int *s, int *s2, int argc)
         i--;
     }
 	s[0] = s2[0];
-	i++;
+	i = 0;
 	// Décaler tous les éléments de a vers le haut
 	while (i < argc - 1)
 	{
-		s[i] = s[i + 1];
+		s2[i] = s2[i + 1];
         i++;
 	}
+	s[argc - 1] = 0;
 }
 
 void ft_pb(int *s, int *s2, int argc)
@@ -102,11 +104,12 @@ void ft_pb(int *s, int *s2, int argc)
         i--;
     }
 	s2[0] = s[0];
-	i++;
+	i = 0;
 	// Décaler tous les éléments de a vers le haut
 	while (i < argc - 1)
 	{
-		s2[i] = s2[i + 1];
+		s[i] = s[i + 1];
         i++;
 	}
+	s[argc - 1] = 0;
 }

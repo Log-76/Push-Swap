@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 14:47:34 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/12 14:47:34 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 09:42:29 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int count_elements(int *stack, int max_size)
 void sort_two(int *a)
 {
     if (a[0] > a[1])
-        ft_sa(a, 2);
+        ft_sa(a);
 }
 
 void sort_three(int *a)
@@ -83,5 +83,5 @@ void sort_three(int *a)
         ft_rra(a, 3);
     // Maintenant le max est en bas, on swap si nécessaire
     if (a[0] > a[1])
-        ft_sa(a, 3);
+        ft_sa(a);
 }

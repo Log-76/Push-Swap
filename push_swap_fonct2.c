@@ -6,9 +6,11 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 09:14:24 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/12 09:14:24 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:20:53 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ft_ra(int *s, int argc)
 {
@@ -61,6 +63,7 @@ void	ft_rr(int *s, int *s2, int argc)
 	}
 	if(argc > 1)
 	{
+		i = 0;
 		temp = s2[0]; // sauvegarde
 		while (i < argc - 1)
 		{
@@ -71,13 +74,13 @@ void	ft_rr(int *s, int *s2, int argc)
 	}
 }
 
-void	ft_sa(int *s, int argc)
+void	ft_sa(int *s)
 {
 	write(1, "sa\n", 3);
 	ft_swap(&s[0], &s[1]);
 }
 
-void	ft_sb(int *s2, int argc)
+void	ft_sb(int *s2)
 {
 	write(1, "sb\n", 3);
 	ft_swap(&s2[0], &s2[1]);

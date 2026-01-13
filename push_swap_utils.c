@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/08 15:58:27 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:15:36 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_istrier(int *s, int argc)
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		if (s[i] > s[i + 1] && s[i + 1])
 			return (0);
@@ -64,7 +64,7 @@ int	ft_atoi(const char *nptr)
 	return (numb);
 }
 
-void	ft_ss(int *s, int *s2, int argc)
+void	ft_ss(int *s, int *s2)
 {
 	write(1, "ss\n", 3);
 	ft_swap(&s[0], &s[1]);

@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/08 15:22:23 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 09:59:48 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 #include <unistd.h>
 
 void	ft_swap(int *a, int *b);
-void	ft_sa(int *s, int argc);
-void	ft_sb(int *s2, int argc);
-void	ft_ss(int *s, int *s2, int argc);
+int		ft_atoi(const char *nptr);
+void	ft_sa(int *s);
+void	ft_sb(int *s2);
+void	ft_ss(int *s, int *s2);
 void	ft_pa(int *s, int *s2, int argc);
 void	ft_pb(int *s, int *s2, int argc);
 void	ft_ra(int *s, int argc);
@@ -29,7 +30,6 @@ void	ft_rrb(int *s2, int argc);
 void	ft_rrr(int *s, int *s2, int argc);
 int		ft_istrier(int *s, int argc);
 int		ft_type(int *s, int *s2);
-int		ft_atoi(const char *nptr);
 int		find_min_pos(int *stack, int size);
 int		find_max_pos(int *stack, int size);
 int		count_elements(int *stack, int max_size);
@@ -47,3 +47,4 @@ void	rotate_b_down(int *b, int size_b, int max_pos);
 void 	bring_max_to_top(int *b, int total_size, int size_b);
 void	push_back_to_a(int *a, int *b, int total_size);
 void	sort_hundred(int *a, int *b, int total_size);
+void	simple_sort(int *a, int *b, int size);

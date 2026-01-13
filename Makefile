@@ -3,7 +3,13 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = pushSwap.a
 C_libf = push_swap_utils.c\
-		 push_swap.c
+		 push_swap.c\
+		 push_swap_fonct.c\
+		 push_swap_fonct2.c\
+		 push_swap_algo.c\
+		 push_swap_algo2.c\
+		 push_swap_algo3.c\
+		 push_swap_algo4.c
 
 LIB_OBJS =  $(C_libf:.c=.o)
 all: $(NAME)
