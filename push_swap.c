@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 14:03:34 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/13 16:38:06 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	push_swap(char **argv, int argc)
 	simple_sort(a, b, argc - 1);
 	write(1, "ok\n", 3);
 	printf("%d%d%d%d\n",a[0],a[1],a[2],a[3]);
+	free(a);
+	free(b);
 }
 
 void	simple_sort(int *a, int *b, int size)
