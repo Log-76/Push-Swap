@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 09:52:07 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 10:02:59 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ void	push_swap(char **argv, int argc)
 		return ;
 	}
 	simple_sort(a, b, argc - 1);
-	if (ft_istrier(a,argc-1) == 1)
-	{
-		write(1,"ok\n",3);
-	}
 	free(a);
 	free(b);
 }
