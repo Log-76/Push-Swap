@@ -6,11 +6,12 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 14:47:34 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 09:42:29 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:49:50 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 int find_min_pos(int *stack, int size)
 {
@@ -56,7 +57,7 @@ int count_elements(int *stack, int max_size)
     int count = 0;
     int i = 0;
     
-    while (i < max_size && stack[i] != 0)
+    while (i < max_size && stack[i] != INT_MIN)
     {
         count++;
         i++;

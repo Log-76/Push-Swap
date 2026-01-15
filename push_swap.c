@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 15:29:30 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:51:03 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int *ft_calloc(int argc)
 	int i;
 
 	i = 0;
-	*b = malloc(argc * sizeof(int));
+	b = malloc(argc * sizeof(int));
 	while (i < argc)
 	{
 		b[i] = 0;
