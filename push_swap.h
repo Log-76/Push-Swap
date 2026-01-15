@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 09:59:48 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 09:48:37 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,7 @@ void 	bring_max_to_top(int *b, int total_size, int size_b);
 void	push_back_to_a(int *a, int *b, int total_size);
 void	sort_hundred(int *a, int *b, int total_size);
 void	simple_sort(int *a, int *b, int size);
+int		is_valid_number(char *str);
+int		check_args(int argc, char **argv);
+int		has_duplicates(int *arr, int size);
+int		fill_array(char **argv, int argc, int *a);

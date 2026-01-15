@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 12:15:36 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 09:40:25 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int	ft_istrier(int *s, int argc)
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	numb;
-	int	signe;
+	int		i;
+	long	numb;
+	int		signe;
 
 	i = 0;
-	signe = 0;
+	signe = 1;
 	numb = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
@@ -61,7 +61,7 @@ int	ft_atoi(const char *nptr)
 	}
 	if (signe == -1)
 		numb *= -1;
-	return (numb);
+	return ((int)numb);
 }
 
 void	ft_ss(int *s, int *s2)
