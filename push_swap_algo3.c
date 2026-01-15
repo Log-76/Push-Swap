@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:21:24 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/12 18:21:24 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:07:57 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,17 @@ void rotate_b_up(int *b, int total_size, int max_pos)
     }
 }
 
-void rotate_b_down(int *b, int size_b, int max_pos)
+void rotate_b_down(int *b, int total_size, int max_pos)
 {
-    while (max_pos < size_b)
-    {
-        ft_rrb(b, size_b);
-        max_pos++;
-    }
+	int size_b = count_elements(b, total_size);
+	int rotations_needed = size_b - max_pos;
+	
+	// Faire des rotations inverses pour amener max_pos à 0
+	while (rotations_needed > 0)
+	{
+		ft_rrb(b, total_size);
+		rotations_needed--;
+	}
 }
 
 void bring_max_to_top(int *b, int total_size, int size_b)

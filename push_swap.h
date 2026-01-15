@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 09:48:37 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:31:35 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,4 @@ int		is_valid_number(char *str);
 int		check_args(int argc, char **argv);
 int		has_duplicates(int *arr, int size);
 int		fill_array(char **argv, int argc, int *a);
+int		*ft_calloc(int argc);

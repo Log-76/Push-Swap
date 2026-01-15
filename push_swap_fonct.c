@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:17:18 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 12:45:22 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:06:19 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void ft_pa(int *s, int *s2, int argc)
 		s2[i] = s2[i + 1];
         i++;
 	}
-	s[argc - 1] = 0;
+	s2[argc - 1] = 0;
 }
 
 void ft_pb(int *s, int *s2, int argc)

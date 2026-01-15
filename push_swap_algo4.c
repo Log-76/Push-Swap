@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:23:26 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/12 18:23:26 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:15:54 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void push_back_to_a(int *a, int *b, int total_size)
 {
     int size_b;
     
-    while (count_elements(b, total_size) > 0)
+    size_b = count_elements(b, total_size);
+    while (size_b > 0)
     {
         size_b = count_elements(b, total_size);
         bring_max_to_top(b, total_size, size_b);

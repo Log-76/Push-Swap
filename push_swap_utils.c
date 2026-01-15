@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 09:40:25 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:20:10 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_istrier(int *s, int argc)
 	i = 0;
 	while (i < argc - 1)
 	{
-		if (s[i] > s[i + 1] && s[i + 1])
+		if (s[i] > s[i + 1])
 			return (0);
 		i++;
 	}

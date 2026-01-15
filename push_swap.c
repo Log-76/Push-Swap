@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:05:58 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 10:02:59 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:29:30 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	push_swap(char **argv, int argc)
 	int	*b;
 
 	a = malloc(argc * sizeof(int));
-	b = malloc(argc * sizeof(int));
+	b = ft_calloc(argc);
 	if (!a || !b || !fill_array(argv, argc, a))
 	{
 		free(a);
@@ -37,7 +37,20 @@ void	push_swap(char **argv, int argc)
 	free(a);
 	free(b);
 }
+int *ft_calloc(int argc)
+{
+	int *b;
+	int i;
 
+	i = 0;
+	*b = malloc(argc * sizeof(int));
+	while (i < argc)
+	{
+		b[i] = 0;
+		i++;
+	}
+	return(b);
+}
 void	simple_sort(int *a, int *b, int size)
 {
 	if (ft_istrier(a, size))

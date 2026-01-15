@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:21:31 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/13 09:42:57 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:08:35 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,27 @@ void sort_four(int *a, int *b, int total_size)
 
 void push_small_to_b(int *a, int *b, int total_size, int seuil)
 {
-    int size_a;
-    int rotations;
+	int size_a;
+	int checked;
 
 	size_a = count_elements(a, total_size);
-	rotations = 0;
-    while (size_a > 3 && rotations < size_a * 2)
-    {
-        // Si l'élément en haut est petit (sous le seuil)
-        if (a[0] <= seuil)
-        {
-            ft_pb(a, b, total_size);
-            size_a--;
-            rotations = 0;
-        }
-        else
-        {
-            ft_ra(a, total_size);
-            rotations++;
-        }
-    }
+	checked = 0;
+	
+	// ✅ Parcourir la stack une seule fois
+	while (size_a > 3 && checked < size_a)
+	{
+		if (a[0] <= seuil)
+		{
+			ft_pb(a, b, total_size);
+			size_a--;
+			checked = 0;  // Réinitialiser car la stack a changé
+		}
+		else
+		{
+			ft_ra(a, total_size);
+			checked++;
+		}
+	}
 }
 
 void copy_array(int *src, int *dst, int size)
