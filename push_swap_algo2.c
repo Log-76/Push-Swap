@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:21:31 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 15:08:35 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:40:14 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ void sort_four(int *a, int *b, int total_size)
     min_pos = find_min_pos(a, 4);
     // Amener le min en haut
     if (min_pos == 1)
-        ft_sa(a);
+        ft_sa(a, total_size);
     else if (min_pos == 2)
     {
-        ft_rra(a, total_size);
-        ft_rra(a, total_size);
+        ft_rra(a, 4);
+        ft_rra(a, 4);
     }
     else if (min_pos == 3)
-        ft_rra(a, total_size);
+        ft_rra(a, 4);
     
     // Push le min vers B
     ft_pb(a, b, total_size);
     // Trier les 3 restants
-    sort_three(a);
+    sort_three(a, total_size);
     // Repousser le min
     ft_pa(a, b, total_size);
 }

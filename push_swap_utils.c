@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:33:46 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 15:20:10 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:50:57 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,15 @@ void	ft_swap(int *a, int *b)
 int	ft_istrier(int *s, int argc)
 {
 	int	i;
-
+	int	size;
+	// On récupère le nombre de vrais éléments
+	size = count_elements(s, argc);
+	// S'il y a 0 ou 1 élément, c'est trié par définition
+	if (size <= 1)
+		return (1);
 	i = 0;
-	while (i < argc - 1)
+	// On s'arrête à size - 1 pour ne pas comparer le dernier chiffre avec du vide
+	while (i < size - 1)
 	{
 		if (s[i] > s[i + 1])
 			return (0);

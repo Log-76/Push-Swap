@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 14:47:34 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/15 16:49:50 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/16 11:55:09 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,35 +54,44 @@ int find_max_pos(int *stack, int size)
 
 int count_elements(int *stack, int max_size)
 {
-    int count = 0;
-    int i = 0;
-    
+    int i;
+
+    i = 0;
+    // On compte jusqu'au premier "vide" (INT_MIN)
     while (i < max_size && stack[i] != INT_MIN)
     {
-        count++;
         i++;
     }
-    return count;
+    return (i);
 }
 
-void sort_two(int *a)
+void sort_two(int *a, int total_size)
 {
     if (a[0] > a[1])
-        ft_sa(a);
+        ft_sa(a, total_size);
 }
 
-void sort_three(int *a)
+void sort_three(int *a, int total_size)
 {
-	int max_pos;
+    int max_pos;
+    int size;
 
-	max_pos = find_max_pos(a, 3);
-    // Si le max est en haut
+    size = count_elements(a, total_size);
+    if (size < 2)
+        return ;
+    if (size == 2)
+    {
+        if (a[0] > a[1])
+            ft_sa(a, total_size);
+        return ;
+    }
+    max_pos = find_max_pos(a, 3);
+    // 1. On place le plus grand à la fin (index 2)
     if (max_pos == 0)
-        ft_ra(a, 3);
-    // Si le max est au milieu
+        ft_ra(a, total_size);
     else if (max_pos == 1)
-        ft_rra(a, 3);
-    // Maintenant le max est en bas, on swap si nécessaire
+        ft_rra(a, total_size);
+    // 2. Maintenant que le max est en bas, on vérifie les deux premiers
     if (a[0] > a[1])
-        ft_sa(a);
+        ft_sa(a, total_size);
 }
