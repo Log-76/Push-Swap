@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:35:05 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/16 16:15:37 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:52:37 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	push_back_to_a(int *a, int *b, int total_size);
 void	bring_max_to_top(int *b, int total_size, int size_b);
 int		calculate_move_cost(int size_b, int pos);
 int		find_best_element_to_push(int *b, int total_size);
-void	bring_element_to_top(int *stack, int total_size, int pos, char pile_name);
+void	bring_element_to_top(int *stack, int total_size, int pos, char pile_n);
 void	push_to_b_smart(int *a, int *b, int total_size, int threshold);
 void	final_rotation_a(int *a, int total_size);
 int		is_valid_number(char *str);
@@ -67,4 +67,5 @@ void	final_alignment(int *a, int total_size);
 int		find_cheapest_element(int *a, int *b, int total_size);
 int		find_threshold_by_rank(int *a, int total_size, int rank);
 void	push_chunk_to_b(int *a, int *b, int total_size, int threshold);
+void	do_rotate(int *stack, int total_size, char pile, int type);
 #endif
