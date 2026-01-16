@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:23:26 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/16 15:40:17 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:04:31 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ void push_back_to_a(int *a, int *b, int total_size)
 
     while (count_elements(b, total_size) > 0)
     {
-        // 1. On choisit quel élément de B on veut remonter
-        best_pos_b = find_best_element_to_push(b, total_size);
+        // 1. On trouve l'élément le plus rentable
+        best_pos_b = find_cheapest_element(a, b, total_size);
         
-        // 2. On calcule sa place exacte dans A
+        // 2. On trouve sa place dans A
         target_pos_a = find_target_pos_in_a(a, b[best_pos_b], total_size);
         
-        // 3. On aligne les deux piles
+        // 3. On utilise ta fonction bring_element_to_top pour les deux
         bring_element_to_top(b, total_size, best_pos_b, 'b');
         bring_element_to_top(a, total_size, target_pos_a, 'a');
         
-        // 4. On pousse : l'élément arrive exactement au bon endroit
         ft_pa(a, b, total_size);
     }
 }
@@ -81,27 +80,22 @@ int find_threshold_top_three(int *a, int size)
 
 void sort_hundred(int *a, int *b, int total_size)
 {
-    int threshold;
-    int size_a;
-    
-    // 1. On isole les plus grands dans A
-    size_a = count_elements(a, total_size);
-    threshold = find_threshold_top_three(a, size_a);
-    push_to_b_smart(a, b, total_size, threshold);
+    int size_a = count_elements(a, total_size);
+    int chunk_size = size_a / 4; // Environ 25 nombres par chunk
+    int current_limit = chunk_size;
 
-    // 2. On vide A vers B jusqu'à ce qu'il n'en reste que 3
-    // C'est beaucoup plus sûr que le "while !ft_istrier"
+    // 1. Envoyer par chunks vers B
     while (count_elements(a, total_size) > 3)
     {
-        ft_pb(a, b, total_size);
+        // On cherche les 25 plus petits, puis les 25 suivants...
+        int threshold = find_threshold_by_rank(a, size_a, current_limit);
+        
+        push_chunk_to_b(a, b, total_size, threshold);
+        current_limit += chunk_size;
     }
 
-    // 3. On trie les 3 piliers (les plus grands du set)
+    // 2. Finir le travail
     sort_three(a, total_size);
-
-    // 4. On remonte tout B vers A proprement
     push_back_to_a(a, b, total_size);
-
-    // 5. Rotation finale pour aligner le 1 au sommet
-    final_rotation_a(a, total_size);
+    final_alignment(a, total_size);
 }
