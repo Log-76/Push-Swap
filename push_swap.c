@@ -27,7 +27,7 @@ void	push_swap(char **argv, int argc)
 		write(2, "Error\n", 6);
 		return ;
 	}
-	if (has_duplicates(a, argc))
+	if (has_duplicates(a, argc - 1))
 	{
 		free(a);
 		free(b);
