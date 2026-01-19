@@ -6,7 +6,7 @@
 /*   By: lleriche <lleriche@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:34:01 by lleriche          #+#    #+#             */
-/*   Updated: 2026/01/16 17:05:00 by lleriche         ###   ########.fr       */
+/*   Updated: 2026/01/19 10:11:42 by lleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	find_best_element_to_push(int *b, int total_size)
 
 	size_b = count_elements(b, total_size);
 	if (size_b == 0)
-		return 0;
+		return (0);
 	best_pos = find_max_pos(b, size_b);
 	min_cost = calculate_move_cost(size_b, best_pos);
 	i = 0;
@@ -54,6 +54,7 @@ void	final_rotation_a(int *a, int total_size)
 {
 	int	size;
 	int	min_pos;
+	int	r_moves;
 
 	size = count_elements(a, total_size);
 	min_pos = find_min_pos(a, size);
@@ -69,7 +70,7 @@ void	final_rotation_a(int *a, int total_size)
 	}
 	else
 	{
-		int r_moves = size - min_pos;
+		r_moves = size - min_pos;
 		while (r_moves > 0)
 		{
 			ft_rra(a, total_size);
@@ -81,9 +82,11 @@ void	final_rotation_a(int *a, int total_size)
 void	push_to_b_smart(int *a, int *b, int total_size, int threshold)
 {
 	int	initial_size_a;
-	int	pushed = 0;
-	int	i = 0;
+	int	pushed;
+	int	i;
 
+	pushed = 0;
+	i = 0;
 	initial_size_a = count_elements(a, total_size);
 	while (i < initial_size_a && (initial_size_a - pushed) > 3)
 	{

@@ -3,6 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 C_libf = push_swap_utils.c\
+         push_swap_utils2.c\
          push_swap.c\
          push_swap_fonct.c\
          push_swap_fonct2.c\
